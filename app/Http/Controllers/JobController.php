@@ -95,7 +95,7 @@ class JobController
                     'N' => $count,
                 ],
                 'updated_at' => [
-                    'N' => time(),
+                    'N' => (string) time(),
                 ],
             ],
             'TableName' => 'in_digital_challenge',
