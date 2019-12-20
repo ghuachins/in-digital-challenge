@@ -4,3 +4,8 @@ Homestead.json
 Homestead.yaml
 .env
 .phpunit.result.cache
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
