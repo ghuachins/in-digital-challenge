@@ -2,25 +2,109 @@
     "openapi": "3.0.0",
     "info": {
         "title": "In digital",
-        "description": "This is a demo service, which provides the function of demonstrating the swagger api",
+        "description": "This is a microservice, which provide many services as part of InDigital Challenge.",
         "contact": {
-            "name": "mylxsw",
-            "email": "mylxsw@aicode.cc"
+            "name": "Gian Huachin",
+            "email": "ghuachins@gmail.com"
         },
         "version": "1.0.0"
     },
     "servers": [
         {
-            "url": "http://localhost",
+            "url": "http://in-digital-challenge.local.vh:8108",
             "description": "development environment"
         }
     ],
     "paths": {
+        "/creacliente": {
+            "post": {
+                "tags": [
+                    "client"
+                ],
+                "description": "Crear cliente",
+                "operationId": "createClient",
+                "requestBody": {
+                    "description": "Input data format",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "nombre": {
+                                        "description": "Nombre del cliente",
+                                        "type": "string"
+                                    },
+                                    "apellido": {
+                                        "description": "Apellido del cliente",
+                                        "type": "string"
+                                    },
+                                    "fecha_nacimiento": {
+                                        "description": "Fecha de nacimiento del cliente",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cliente creado exitosamente"
+                    },
+                    "422": {
+                        "description": "Datos inválidos"
+                    }
+                }
+            }
+        },
+        "/listclientes": {
+            "get": {
+                "tags": [
+                    "client"
+                ],
+                "description": "Listado de clientes",
+                "operationId": "listClients",
+                "responses": {
+                    "200": {
+                        "description": "Listado de clientes paginado"
+                    }
+                }
+            }
+        },
+        "/job/kpi": {
+            "get": {
+                "tags": [
+                    "jobs"
+                ],
+                "description": "Resolver los KPIs",
+                "operationId": "App\\Http\\Controllers\\JobController::kpi",
+                "responses": {
+                    "200": {
+                        "description": "Actualización de los KPIs"
+                    }
+                }
+            }
+        },
+        "/kpideclientes": {
+            "get": {
+                "tags": [
+                    "performance"
+                ],
+                "description": "Promedio y desviación estándar de las edades de los clientes",
+                "operationId": "App\\Http\\Controllers\\PerformanceController::index",
+                "responses": {
+                    "200": {
+                        "description": "KPIs de todos los clientes"
+                    }
+                }
+            }
+        },
         "/": {
             "get": {
                 "description": "Home page",
+                "operationId": "createUser",
                 "responses": {
-                    "default": {
+                    "200": {
                         "description": "Welcome page"
                     }
                 }

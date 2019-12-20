@@ -13,6 +13,17 @@ use Illuminate\Support\Arr;
  */
 class JobController
 {
+    /**
+     * @OA\Get(
+     *     path="/job/kpi",
+     *     tags={"jobs"},
+     *     description="Resolver los KPIs",
+     *
+     *     @OA\Response(response="200", description="Actualización de los KPIs")
+     * )
+     * @param DynamoDbClient $dynamoDbClient
+     * @return array
+     */
     public function kpi(DynamoDbClient $dynamoDbClient)
     {
 

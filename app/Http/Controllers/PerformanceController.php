@@ -14,6 +14,15 @@ use Illuminate\Support\Arr;
 class PerformanceController
 {
     /**
+     *
+     * @OA\Get(
+     *     path="/kpideclientes",
+     *     tags={"performance"},
+     *     description="Promedio y desviación estándar de las edades de los clientes",
+     *
+     *     @OA\Response(response="200", description="KPIs de todos los clientes")
+     * )
+     *
      * @param DynamoDbClient $dynamoDbClient
      * @return array
      */

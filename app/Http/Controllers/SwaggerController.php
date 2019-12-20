@@ -7,22 +7,23 @@ use OpenApi\Annotations\Info;
 use OpenApi\Annotations\Property;
 use OpenApi\Annotations\Schema;
 use OpenApi\Annotations\Server;
+use OpenApi\Annotations\Get;
 
 /**
  *
  * @Info(
  *     version="1.0.0",
  *     title="In digital",
- *     description= "This is a demo service, which provides the function of demonstrating the swagger api",
+ *     description= "This is a microservice, which provide many services as part of InDigital Challenge.",
  *     @Contact(
- *         email="mylxsw@aicode.cc",
- *         name="mylxsw"
+ *         email="ghuachins@gmail.com",
+ *         name="Gian Huachin"
  *     )
  * )
  *
  * @Server(
- *     url="http://localhost",
- * description= "development environment"
+ *     url="http://in-digital-challenge.local.vh:8108",
+ *     description= "development environment"
  * )
  *
  * @Schema(
@@ -32,15 +33,16 @@ use OpenApi\Annotations\Server;
  *     @Property(
  *         property="code",
  *         type="string",
- * description= "response code"
+ *         description= "response code"
  *     ),
- * @Property (property = "message", type = "string", description = "response result prompt")
+ *     @Property (property = "message", type = "string", description = "response result prompt")
  * )
  *
  * @OA\Get(
  *     path="/",
  *     description="Home page",
- *     @OA\Response(response="default", description="Welcome page")
+ *     operationId="createUser",
+ *     @OA\Response(response="200", description="Welcome page")
  * )
  *
  * @package App\Http\Controllers

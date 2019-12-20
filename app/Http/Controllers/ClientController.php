@@ -17,6 +17,41 @@ use Ramsey\Uuid\Uuid;
 class ClientController extends Controller
 {
     /**
+     * @OA\Post(
+     *     path="/creacliente",
+     *     tags={"client"},
+     *     description="Crear cliente",
+     *     operationId="createClient",
+     *
+     *     @OA\Response(response="200", description="Cliente creado exitosamente"),
+     *     @OA\Response(response="422", description="Datos inválidos"),
+     *     @OA\RequestBody(
+     *         description="Input data format",
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 type="object",
+     *                 @OA\Property(
+     *                     property="nombre",
+     *                     description="Nombre del cliente",
+     *                     type="string",
+     *                 ),
+     *                 @OA\Property(
+     *                     property="apellido",
+     *                     description="Apellido del cliente",
+     *                     type="string",
+     *                 ),
+     *                 @OA\Property(
+     *                     property="fecha_nacimiento",
+     *                     description="Fecha de nacimiento del cliente",
+     *                     type="string"
+     *                 )
+     *             )
+     *         )
+     *     )
+     * )
+     *
+     *
      * @param Request $request
      * @return array
      * @throws \Throwable
@@ -76,6 +111,17 @@ class ClientController extends Controller
 
 
     /**
+     * @OA\Get(
+     *     path="/listclientes",
+     *     tags={"client"},
+     *     description="Listado de clientes",
+     *     operationId="listClients",
+     *
+     *     @OA\Response(response="200", description="Listado de clientes paginado")
+     * )
+     *
+     *
+     *
      * @param DynamoDbClient $dynamoDbClient
      * @return array
      */

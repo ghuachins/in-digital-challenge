@@ -13,10 +13,14 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
 
+$router->get('/', function () {
+    return [
+        "message"   => "Welcome to the InDigital Challenge API",
+        "version"   => "1.0.0",
+        "environment" => app()->environment()
+    ];
+});
 
 
 $router->post('creacliente', 'ClientController@index');
