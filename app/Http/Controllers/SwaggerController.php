@@ -22,7 +22,7 @@ use OpenApi\Annotations\Get;
  * )
  *
  * @Server(
- *     url="http://in-digital-challenge.local.vh:8108",
+ *     url="http://indigital-env.bzfunhhwux.us-east-1.elasticbeanstalk.com",
  *     description= "development environment"
  * )
  *
