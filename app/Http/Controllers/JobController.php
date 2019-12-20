@@ -92,10 +92,10 @@ class JobController
                     'N' => $variance,
                 ],
                 'total_clients' => [
-                    'N' => $count,
+                    'N' => (int) $count,
                 ],
                 'updated_at' => [
-                    'N' => (string) time(),
+                    'N' => (int) time(),
                 ],
             ],
             'TableName' => 'in_digital_challenge',
