@@ -86,10 +86,10 @@ class JobController
                     'S' => 'kpi',
                 ],
                 'average' => [
-                    'N' => $average,
+                    'N' => (string) $average,
                 ],
                 'variance' => [
-                    'N' => $variance,
+                    'N' => (string) $variance,
                 ],
                 'total_clients' => [
                     'N' => (string) $count,
