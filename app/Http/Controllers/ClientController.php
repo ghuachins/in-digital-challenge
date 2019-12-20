@@ -131,6 +131,7 @@ class ClientController extends Controller
             'TableName' => 'in_digital_challenge',
         ]);
 
+        // Este valor fue obtenido de este PORTAL OFICIAL https://databank.worldbank.org/reports.aspx?source=2&series=SP.DYN.LE00.IN&country=
         $lifeExpectancy = '75.3'; // Latin America 2017
 
         $items = $scanResult->get('Items');
