@@ -94,13 +94,13 @@ class ClientController extends Controller
                     'S' => $validatedData['fecha_nacimiento'],
                 ],
                 'age' => [
-                    'N' => (int) Carbon::parse($validatedData['fecha_nacimiento'])->age
+                    'N' => (string) Carbon::parse($validatedData['fecha_nacimiento'])->age
                 ],
                 'updated_at' => [
-                    'N' => (int) time(),
+                    'N' => (string) time(),
                 ],
                 'created_at' => [
-                    'N' => (int) time(),
+                    'N' => (string) time(),
                 ],
             ],
             'TableName' => 'in_digital_challenge',
