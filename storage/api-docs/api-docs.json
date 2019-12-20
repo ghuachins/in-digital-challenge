@@ -1,0 +1,48 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "In digital",
+        "description": "This is a demo service, which provides the function of demonstrating the swagger api",
+        "contact": {
+            "name": "mylxsw",
+            "email": "mylxsw@aicode.cc"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost",
+            "description": "development environment"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Home page",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ApiResponse": {
+                "description": "Response entity, response result uses this structure uniformly",
+                "properties": {
+                    "code": {
+                        "description": "response code",
+                        "type": "string"
+                    },
+                    "message": {
+                        "description": "response result prompt",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

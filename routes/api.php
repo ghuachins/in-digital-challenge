@@ -18,3 +18,11 @@ $router->get('/', function () use ($router) {
 });
 
 
+
+$router->post('creacliente', 'ClientController@index');
+
+$router->get('listclientes', 'ClientController@list');
+
+$router->get('kpideclientes', 'PerformanceController@index');
+
+$router->get('job/kpi', 'JobController@kpi');

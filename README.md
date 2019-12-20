@@ -7,6 +7,15 @@
 
 Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
 
+```bash
+aws dynamodb create-table \
+     --table-name in_digital_challenge \
+     --attribute-definitions AttributeName=id,AttributeType=S AttributeName=type,AttributeType=S \
+     --key-schema AttributeName=id,KeyType=HASH AttributeName=type,KeyType=RANGE \
+     --provisioned-throughput ReadCapacityUnits=10,WriteCapacityUnits=10 \
+     --endpoint-url http://localhost:8000
+```
+
 ## Official Documentation
 
 Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
